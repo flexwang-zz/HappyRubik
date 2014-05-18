@@ -31,6 +31,14 @@ youtube: https://www.youtube.com/watch?v=8GJWn7WzRNg
 
 youku: http://v.youku.com/v_show/id_XNjE4MzY1NDU2.html （mainland, China only)
 
+Download apk 下载
+----
+
+机锋网：http://apk.gfan.com/Product/App680721.html
+木蚂蚁：http://www.mumayi.com/android-458697.html?1385750840
+安智网：http://www.anzhi.com/soft_1219150.html
+安卓市场：http://apk.hiapk.com/html/2013/11/2028725.html
+
 License
 ----
 
