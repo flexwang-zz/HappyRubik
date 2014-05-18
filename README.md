@@ -40,6 +40,7 @@ Snapshots 截图
 --------------
 
 ![alt text](/snapshots/battle.png =100x20 "Title")
+![](./snapshots/battle.png =100x20)
 
 Download apk 下载
 ----
