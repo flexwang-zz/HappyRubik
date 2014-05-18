@@ -39,8 +39,7 @@ youku: http://v.youku.com/v_show/id_XNjE4MzY1NDU2.html (China mainland only)
 Snapshots 截图
 --------------
 
-![alt text](/snapshots/battle.png =100x20 "Title")
-![](./snapshots/battle.png =100x20)
+ <img src="https://github.com/flexwang/zbuffer/raw/master/snapshots/battle.png" alt="GitHub" title="battle" width="278" height="300" />  
 
 Download apk 下载
 ----
