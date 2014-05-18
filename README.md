@@ -39,7 +39,7 @@ youku: http://v.youku.com/v_show/id_XNjE4MzY1NDU2.html (China mainland only)
 Snapshots 截图
 --------------
 
-<img src="https://github.com/flexwang/HappyRubik/raw/master/snapshots/welcome_android.jpg" alt="GitHub" title="battle" width="200" height="300" /><img src="https://github.com/flexwang/HappyRubik/raw/master/snapshots/loading.png" alt="GitHub" title="battle" width="200" height="300" /><img src="https://github.com/flexwang/HappyRubik/raw/master/snapshots/battle.png" alt="GitHub" title="battle" width="200" height="300" />  
+<img src="https://github.com/flexwang/HappyRubik/raw/master/snapshots/welcome_android.jpg" alt="GitHub" title="battle" width="200" height="300" /><img src="https://github.com/flexwang/HappyRubik/raw/master/snapshots/menu.png" alt="GitHub" title="battle" width="200" height="300" /><img src="https://github.com/flexwang/HappyRubik/raw/master/snapshots/loading.png" alt="GitHub" title="battle" width="200" height="300" /><img src="https://github.com/flexwang/HappyRubik/raw/master/snapshots/battle.png" alt="GitHub" title="battle" width="200" height="300" />
 
 Download apk 下载
 ----
