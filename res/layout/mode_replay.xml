@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+       			         
+    <flex.android.magiccube.view.ViewReplayMode
+        android:id="@+id/game_view_replay"
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	
+    />
+    
+   	<ImageView
+   			android:id="@+id/img_replay_clock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:src="@drawable/clock"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"/>
+
+
+
+   	<TextView
+   			android:id="@+id/txt_replay_time"
+   			android:layout_toRightOf="@id/img_replay_clock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"
+    		android:textColor="@+color/dark"/>
+  
+   	<ImageView
+   			android:id="@+id/img_replay_nstep"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:layout_toRightOf="@id/img_replay_clock"
+    		android:src="@drawable/nstep"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="85dip"/>
+   	
+   	<TextView
+   			android:id="@+id/txt_replay_nStep"
+   			android:layout_toRightOf="@id/img_replay_nstep"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"/>   	
+   		
+
+   		<LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_replay_moveback"
+       	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true">
+		<ImageButton 
+		  android:id = "@+id/bt_replay_moveback"
+		  android:layout_width = "wrap_content"
+		  android:layout_height = "wrap_content" 
+		  android:background="@drawable/buttons_moveback_unable"
+		  android:contentDescription="@string/moveback"
+		/>
+	</LinearLayout>
+	 
+	 <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_replay_moveforward"
+       	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true">
+		<ImageButton 
+		  android:id = "@+id/bt_replay_moveforward"
+		  android:layout_width = "wrap_content"
+		  android:layout_height = "wrap_content" 
+		  android:background="@drawable/buttons_moveforward"
+		  android:contentDescription="@string/moveforward"
+		/>
+	</LinearLayout>
+	  
+	  <ImageView
+   	    	android:id="@+id/img_replay_rec"
+    		android:layout_width="fill_parent"
+    		android:layout_height="fill_parent"
+    		android:src="@drawable/rec"
+			android:scaleType="fitXY"
+    		android:visibility="visible"/>
+	 <ImageView
+          	android:layout_width="fill_parent"
+   			android:layout_height="fill_parent"
+    		android:id="@+id/replay_loading"
+    		android:src="@drawable/loading"
+    		android:scaleType="fitXY"
+    		android:visibility="visible"/>
+	 
+</RelativeLayout>

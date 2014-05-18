@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:id="@+id/view_dialog"
+    android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical">
+	<TableLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="match_parent">
+	
+	    <!-- difficulty -->
+	    <TableRow>
+	        <TextView android:text="难度"/>
+	        <SeekBar
+	            android:id="@+id/sbar_setting_difficulty"
+	            android:layout_width="wrap_content"
+	         />
+	    </TableRow>
+	    <!-- sensitivity -->
+	    <TableRow>
+	        <TextView android:text="滑动灵敏度"/>
+	        <SeekBar
+	            android:id="@+id/sbar_setting_sensitivity"
+	            android:layout_width="wrap_content"
+	         />
+	    </TableRow>
+	    <TableRow>
+	        <TextView android:text="背景音乐"/>
+	        <SeekBar
+	            android:id="@+id/sbar_setting_bgvolume"
+	            android:layout_width="wrap_content"
+	         />      
+	    </TableRow>
+	    <TableRow>
+	        <TextView android:text="操作音效"/>
+	        <SeekBar
+	            android:id="@+id/sbar_setting_movevolume"
+	            android:layout_width="wrap_content"
+	         />
+	    </TableRow>
+	   	<TableRow>
+	        <TextView android:text="摇一摇灵敏度"/>
+	        <SeekBar
+	            android:id="@+id/sbar_setting_minvibration"
+	            android:layout_width="wrap_content"
+	         />      
+	    </TableRow>
+	    <TableRow>
+	          <TextView android:text="引导动画"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"/>
+			  <RadioGroup android:id="@+id/radioGroup" android:contentDescription="引导动画" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+	     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radioGuideOn" android:button="@drawable/checkbox" android:text="开启"></RadioButton>
+	     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radioGuideOff" android:button="@drawable/checkbox" android:text="关闭"></RadioButton>    
+	  		  </RadioGroup>
+	
+	    </TableRow>
+	    
+	
+	    
+	</TableLayout>
+
+	<LinearLayout
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+        <Button
+            android:id="@+id/btn_setting_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:text="保存">
+        </Button>
+        <Button
+            android:id="@+id/btn_setting_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            android:text="默认">
+        </Button>
+
+
+    </LinearLayout>	
+</LinearLayout>

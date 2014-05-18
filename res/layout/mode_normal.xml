@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <flex.android.magiccube.view.ViewNormalMode
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	android:id="@+id/game_view_normal"
+    />
+   	<ImageView
+   			android:id="@+id/img_normal_clock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:src="@drawable/clock"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"/>
+   	
+<!-- 	<ImageView
+   			android:id="@+id/img_clocking_time"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:src="@drawable/digit0"
+    		android:layout_toRightOf="@id/clock"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"
+    		android:visibility="gone"/> -->
+
+
+   	<TextView
+   			android:id="@+id/txt_normal_time"
+   			android:layout_toRightOf="@id/img_normal_clock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"
+    		android:textColor="@+color/dark"/>
+   	
+   	<ImageView
+   			android:id="@+id/img_normal_nstep"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:src="@drawable/nstep"
+    		android:layout_toRightOf="@id/img_normal_clock"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="85dip"/>
+   	
+   	<TextView
+   			android:id="@+id/txt_normal_nStep"
+   			android:layout_toRightOf="@id/img_normal_nstep"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"/>  
+    		 	    	 
+	<LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_normal_moveback"
+       	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true">
+		<ImageButton 
+		  android:id = "@+id/bt_normal_moveback"
+		  android:layout_width = "wrap_content"
+		  android:layout_height = "wrap_content" 
+		  android:background="@drawable/buttons_moveback_unable"
+		  android:contentDescription="@string/moveback"
+		/>
+	</LinearLayout>
+	 
+	 <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_normal_moveforward"
+       	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true">
+		<ImageButton 
+		  android:id = "@+id/bt_normal_moveforward"
+		  android:layout_width = "wrap_content"
+		  android:layout_height = "wrap_content" 
+		  android:background="@drawable/buttons_moveforward_unable"
+		  android:contentDescription="@string/moveforward"
+		/>
+	</LinearLayout>
+	
+	<LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_normal_autofinish"
+       	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true">
+		<ImageButton 
+		  android:id = "@+id/bt_normal_autofinish"
+		  android:layout_width = "wrap_content"
+		  android:layout_height = "wrap_content" 
+		  android:background="@drawable/buttons_autosolve_unable"
+		  />
+	</LinearLayout>
+	
+	<ImageView
+          	android:layout_width="fill_parent"
+   			android:layout_height="fill_parent"
+    		android:id="@+id/normal_loading"
+    		android:src="@drawable/loading"
+    		android:scaleType="fitXY"
+    		android:visibility="visible"/>
+	
+</RelativeLayout>

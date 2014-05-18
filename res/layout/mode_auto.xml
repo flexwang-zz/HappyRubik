@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+ 
+    			         
+    <flex.android.magiccube.view.ViewAutoMode
+        android:id="@+id/game_view_auto"
+        android:layout_width="fill_parent"
+    	android:layout_height="fill_parent"
+    	
+    />
+ 			
+   	<ImageView
+   			android:id="@+id/clock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:src="@drawable/clock"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"
+    		android:visibility="gone"/>
+
+   	<TextView
+   			android:id="@+id/txt_auto_time"
+   			android:layout_toRightOf="@id/clock"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"
+    		android:visibility="gone"/>
+   	
+   	<TextView
+   			android:id="@+id/txt_auto_nStep"
+   			android:layout_toRightOf="@id/txt_auto_time"
+    		android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:paddingTop="5dip"
+    		android:paddingLeft="5dip"
+    		android:visibility="gone"/>   	
+   		
+	 <ImageButton 
+	  android:id = "@+id/bt_auto_moveback"
+	  android:layout_width = "wrap_content"
+	  android:layout_height = "wrap_content" 
+	  android:layout_alignParentBottom="true"
+	  android:background="@drawable/buttons_moveback"
+	  android:contentDescription="@string/moveback"
+	  android:layout_marginLeft="14dp"
+	  android:visibility="gone"
+	  />
+	 
+	<ImageButton 
+	  android:id = "@+id/bt_auto_moveforward"
+	  android:layout_width = "wrap_content"
+	  android:layout_height = "wrap_content" 
+	  android:layout_alignParentBottom="true"
+	  android:layout_marginLeft="140dp"
+	  android:background="@drawable/buttons_moveforward"
+	  android:contentDescription="@string/moveforward"
+	  android:visibility="gone"
+	  />
+	
+	<ImageButton 
+	  android:id = "@+id/bt_auto_autofinish"
+	  android:layout_width = "wrap_content"
+	  android:layout_height = "wrap_content" 
+	  android:layout_alignParentBottom="true"
+	  android:layout_marginLeft="240dp"
+	  android:background="@drawable/buttons_autosolve"
+	  android:contentDescription="@string/moveforward"
+	  android:visibility="gone"
+	  />
+</RelativeLayout>

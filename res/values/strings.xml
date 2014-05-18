@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">掌上魔方</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="moveback">后退</string>
+    <string name="moveforward">前进</string>
+    <string name="time">所用时间为：$秒</string>
+    <string name="title_replay_list">录像列表</string>
+    <string name="select_replay">选择一个录像</string>
+
+    <!-- BluetoothPart -->
+    <string name="discoverable">设备可被搜索</string>
+    <string name="connect">连接其他设备</string>
+    <string name="title_paired_devices">连接过的主机</string>
+    <string name="title_other_devices">新的主机</string>
+    <string name="bt_scan">搜索新的主机</string>
+    <string name="none_paired">没有配对设备</string>
+    <string name="scanning">正在搜索设备</string>
+    <string name="select_device">选择一个设备</string>
+    <string name="none_found">未发现设备</string>
+    <string name="not_connected">您并未连接到一个设备</string>
+
+    <!-- BluetoothChat -->
+    <string name="send">Send</string>
+    <string name="bt_not_enabled_leaving">蓝牙开启不成功...</string>
+    <string name="title_connecting">connecting...</string>
+    <string name="title_connected_to">connected: </string>
+    <string name="title_not_connected">not connected</string>
+
+    <!-- ThanksList -->
+
+    <string name="thankslistnotice1">若您有好的意见或建议，请联系我：flexwang@qq.com。</string>
+    <string name="thankslistnotice2">建议包括且不限于：\n1、UI设计方案及图标组件设计；\n2、游戏模式改进；\n3、自动还原算法。</string>
+    <string name="thankslistnotice3">若您的意见被采纳，您的姓名将在征求得您同意的情况下出现在下一版本的致谢名单中！</string>
+    <string name="thankslist2_0_1">
+        _____烟消云散\n
+		lcx19940509123\n
+		清风航子\n
+		chen947097730\n
+		辗转在红尘\n
+		RS小盛
+	</string>
+	<string name="thankslist2_0_1title">
+	   	特别感谢百度贴吧-魔方吧吧友
+	</string>
+
+</resources>

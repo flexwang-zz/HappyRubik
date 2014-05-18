@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" 
+    android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:id="@+id/view_dialog"
+	android:orientation="vertical">
+	<TableLayout
+	  android:layout_width="match_parent"
+	  android:layout_height="match_parent">
+	
+	    <!-- difficulty -->
+	    <TableRow>
+	        <TextView android:text="难度"/>
+	        <SeekBar
+	            android:id="@+id/sbar_bluetooth_server_difficulty"
+	            android:layout_width="wrap_content"
+	         />
+	    </TableRow>
+	    
+	    <!-- observetime-->
+	    <TableRow>
+	        <TextView android:text="观察时间"/>
+	        <SeekBar
+	            android:id="@+id/ssbar_bluetooth_server_observetime"
+	            android:layout_width="wrap_content"
+	         />
+	    </TableRow>
+	
+	 
+	    <TableRow>
+	          <TextView android:text="打乱模式"
+	              android:layout_width="wrap_content"
+	              android:layout_height="wrap_content"/>  
+			  <RadioGroup android:id="@+id/radio_bluetoothserver_Group" android:contentDescription="引导动画" android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+	     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radioSameMessup" android:button="@drawable/checkbox" android:text="相同打乱"></RadioButton>
+	     		<RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:id="@+id/radioRandomMessup" android:button="@drawable/checkbox" android:text="随机打乱"></RadioButton>    
+	  		  </RadioGroup>
+	    </TableRow>
+	
+
+<!-- 	<LinearLayout
+	android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"> -->
+     <TableRow>
+        <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_bluetooth_startasserver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="建主">
+        </Button>
+        </FrameLayout>
+        <FrameLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_bluetooth_resetserver"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="默认">
+        </Button>
+        </FrameLayout>
+        </TableRow>
+	</TableLayout>
+	<!-- </LinearLayout> -->
+
+</LinearLayout>

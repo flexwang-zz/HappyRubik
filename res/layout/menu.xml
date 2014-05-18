@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="fill_parent"
+  android:layout_height="fill_parent"
+  android:orientation = "vertical"
+ >
+  
+    
+
+<flex.android.magiccube.mainmenu.MainMenuView
+	android:layout_width="fill_parent"
+   	android:layout_height="fill_parent"
+    android:id="@+id/main_menu_view"
+/> 
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_menu_normal"
+       	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true">
+		<ImageView 
+	    android:id="@+id/img_menu_normal"
+	    android:layout_width="200px"
+    	android:layout_height="200px"
+	    android:src="@drawable/menu_normal"/>
+	</LinearLayout>
+	
+   	<LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_menu_clocking"
+       	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true">
+		<ImageView 
+	    android:id="@+id/img_menu_clocking"
+	    android:layout_width="200px"
+    	android:layout_height="200px"
+	    android:src="@drawable/menu_clocking"/>
+	</LinearLayout>
+	
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_menu_battle"
+       	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true">
+		<ImageView 
+	    android:id="@+id/img_menu_battle"
+	    android:layout_width="200px"
+    	android:layout_height="200px"
+	    android:src="@drawable/menu_battle"/>
+	</LinearLayout>
+	
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/layout_menu_setting"
+       	android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:layout_alignParentTop="true">
+	  <ImageButton
+		android:id = "@+id/bt_setting"
+	    android:layout_width="200px"
+    	android:layout_height="200px"
+		android:background="@drawable/buttons_setting"
+	  />
+	</LinearLayout>
+
+<!--  <Button 
+	  android:id = "@+id/bt_normal"
+	  android:layout_width = "wrap_content"
+	  android:layout_height = "wrap_content" 
+	  android:text = "普通模式"
+	  android:visibility="gone"
+	  android:layout_centerHorizontal= "true"/>
+
+
+
+   <Button 
+	  android:id = "@+id/bt_clocking"
+	  android:layout_below="@+id/bt_normal"
+	  android:layout_width = "wrap_content"
+	  android:layout_height = "wrap_content" 
+	  android:text = "计时模式"
+	  android:layout_centerHorizontal= "true"
+	  android:visibility="gone"
+  	/>
+
+  
+
+	  <Button   
+	  android:id = "@+id/bt_battle"
+	  android:layout_below="@+id/bt_clocking"
+	  android:layout_width = "wrap_content"
+	  android:layout_height = "wrap_content"
+	  android:text = "对战模式"
+	  android:visibility="gone"
+	 android:layout_centerHorizontal= "true"
+	  />
+  
+
+
+	  <Button
+		android:id = "@+id/bt_auto"
+		android:layout_below="@+id/bt_battle"
+		android:layout_width = "wrap_content"
+		android:layout_height = "wrap_content"
+		android:text = "自动还原"
+		android:visibility="gone"
+		android:layout_centerHorizontal= "true"
+	  />
+	   -->
+
+
+ 
+
+      <ImageButton
+		  android:id = "@+id/bt_replay"
+		  android:layout_width = "wrap_content"
+		  android:layout_height = "wrap_content"
+		  android:layout_alignParentRight="true"
+		  android:layout_alignParentBottom="true"
+		  android:paddingBottom="5dip"
+		  android:paddingRight="5dip"
+		  android:src="@drawable/buttons_savereplay"
+		  android:background="#00000000"
+  	/>
+	
+      <ImageView
+          	android:layout_width="fill_parent"
+   			android:layout_height="fill_parent"
+    		android:id="@+id/main_menu_loading"
+    		android:src="@drawable/loading"
+    		android:scaleType="fitXY"
+    		android:visibility="visible"/>
+
+ 
+</RelativeLayout>
