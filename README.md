@@ -28,7 +28,7 @@ Video 视频
 --------------
 
 youtube: https://www.youtube.com/watch?v=8GJWn7WzRNg
-<iframe width="560" height="315" src="http://www.youtube.com/embed/8GJWn7WzRNg" frameborder="0" allowfullscreen></iframe>
+[[youtube-8GJWn7WzRNg-688x387]]
 
 youku: http://v.youku.com/v_show/id_XNjE4MzY1NDU2.html （mainland, China only)
 
