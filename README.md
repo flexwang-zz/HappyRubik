@@ -27,11 +27,12 @@ Android 2.3 and above
 Video 视频
 --------------
 
-youtube: https://www.youtube.com/watch?v=8GJWn7WzRNg
 
 <a href="http://www.youtube.com/watch?feature=player_embedded&v=8GJWn7WzRNg
 " target="_blank"><img src="http://img.youtube.com/vi/8GJWn7WzRNg/0.jpg" 
 alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
+
+youtube: https://www.youtube.com/watch?v=8GJWn7WzRNg
 
 youku: http://v.youku.com/v_show/id_XNjE4MzY1NDU2.html （mainland, China only)
 
