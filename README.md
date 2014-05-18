@@ -36,6 +36,11 @@ youtube: https://www.youtube.com/watch?v=8GJWn7WzRNg
 
 youku: http://v.youku.com/v_show/id_XNjE4MzY1NDU2.html (China mainland only)
 
+Snapshots 截图
+--------------
+
+![alt text](/snapshots/battle.png "Title")
+
 Download apk 下载
 ----
 
