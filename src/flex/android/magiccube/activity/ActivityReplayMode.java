@@ -1,3 +1,19 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube.activity;
 
 import java.text.SimpleDateFormat;
@@ -297,7 +313,7 @@ public class ActivityReplayMode extends Activity implements OnStepListener, OnSt
 				break;
 			case 1:
 				SimpleDateFormat formatter = new SimpleDateFormat("HH:mm:ss");     
-				Date curDate = new Date(System.currentTimeMillis());//»ñÈ¡µ±Ç°Ê±¼ä     
+				Date curDate = new Date(System.currentTimeMillis());//ï¿½ï¿½È¡ï¿½ï¿½Ç°Ê±ï¿½ï¿½     
 				String str = formatter.format(curDate); 
 				txtTime.setText(str);
 				break;
@@ -390,23 +406,23 @@ public class ActivityReplayMode extends Activity implements OnStepListener, OnSt
     };
     
     private void showExitGameAlert(){
-    	new AlertDialog.Builder(this).setTitle("»¶ÀÖÄ§·½"). 
-    	setMessage("È·ÈÏÀë¿ªÂð£¿")  
+    	new AlertDialog.Builder(this).setTitle("ï¿½ï¿½ï¿½ï¿½Ä§ï¿½ï¿½"). 
+    	setMessage("È·ï¿½ï¿½ï¿½ë¿ªï¿½ï¿½")  
         .setIcon(R.drawable.ic_exit)  
-        .setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {  
+        .setPositiveButton("È·ï¿½ï¿½", new DialogInterface.OnClickListener() {  
       
             @Override  
             public void onClick(DialogInterface dialog, int which) {  
-            // µã»÷¡°È·ÈÏ¡±ºóµÄ²Ù×÷  
+            // ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï¡ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½  
             	ActivityReplayMode.this.finish();  
       
             }  
         })  
-        .setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {  
+        .setNegativeButton("È¡ï¿½ï¿½", new DialogInterface.OnClickListener() {  
       
             @Override  
             public void onClick(DialogInterface dialog, int which) {  
-            // µã»÷¡°·µ»Ø¡±ºóµÄ²Ù×÷,ÕâÀï²»ÉèÖÃÃ»ÓÐÈÎºÎ²Ù×÷  
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¡ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï²»ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ÎºÎ²ï¿½ï¿½ï¿½  
             }  
         }).show();  
     }

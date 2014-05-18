@@ -1,3 +1,19 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube.activity;
 
 import android.app.Activity;
@@ -70,25 +86,25 @@ public class ActivityAutoMode extends Activity implements OnTimerListener,
 
 	@Override
 	public void AddStep() {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void SetStep(int nStep) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void OnStateChanged(int StateMode) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void onTimer(int leftTime) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
@@ -103,7 +119,7 @@ public class ActivityAutoMode extends Activity implements OnTimerListener,
 				glView.MoveForward();
 				return;
 			} else if (v == btAutoFinish) {
-				ActivityAutoMode.this.showWait("ÕýÔÚ¼ÆËã...");
+				ActivityAutoMode.this.showWait("ï¿½ï¿½ï¿½Ú¼ï¿½ï¿½ï¿½...");
 				new Thread(autosolverun).start();
 				// ActivityAutoMode.this.waitClose();
 			}
@@ -127,7 +143,7 @@ public class ActivityAutoMode extends Activity implements OnTimerListener,
 	}
 
 	/**
-	 * ¹Ø±ÕµÈ´ý¿ò
+	 * ï¿½Ø±ÕµÈ´ï¿½ï¿½
 	 * */
 	public void waitClose() {
 		runOnUiThread(new Runnable() {
@@ -146,7 +162,7 @@ public class ActivityAutoMode extends Activity implements OnTimerListener,
 
 		@Override
 		public void run() {
-			// TODO Auto-generated method stub
+			
 			glView.AutoSolve("Jaap");
 			waitClose();
 		}
@@ -154,13 +170,13 @@ public class ActivityAutoMode extends Activity implements OnTimerListener,
 
 	@Override
 	public void AddStep(int nStep) {
-		// TODO Auto-generated method stub
+		
 
 	}
 
 	@Override
 	public void OnStateNotify(int StateMode) {
-		// TODO Auto-generated method stub
+		
 
 	}
 

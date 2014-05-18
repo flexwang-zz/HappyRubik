@@ -1,9 +1,24 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube;
 
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.FloatBuffer;
-import java.util.Random;
 import java.util.Vector;
 
 import javax.microedition.khronos.egl.EGLConfig;
@@ -19,12 +34,10 @@ import flex.android.magiccube.solver.SolverFactory;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.media.MediaPlayer;
 import android.opengl.GLSurfaceView;
 import android.opengl.GLU;
 import android.opengl.GLUtils;
 import android.opengl.Matrix;
-import android.util.Log;
 
 public class MagicCubeRender implements GLSurfaceView.Renderer {
 	
@@ -86,19 +99,13 @@ public class MagicCubeRender implements GLSurfaceView.Renderer {
 	
 	private boolean Finished = false;
 	private boolean Resetting = false;
-	
-	private boolean CanMoveForward = false;
-	private boolean CanMoveBack = false;
-	//sound
-	//protected MediaPlayer mediaPlayer;
-	//public static final int ID_SOUND_MOVE = 0;
+
 	
 	protected OnStateListener stateListener = null;
 	private MessageSender messageSender = null;
 	private OnStepListener stepListener = null;
 	
 	public MagicCubeRender(Context context, int w, int h) {
-		// TODO Auto-generated constructor stub
 		this.context = context;
 		this.width = w;
 		this.height = h;
@@ -183,7 +190,7 @@ public class MagicCubeRender implements GLSurfaceView.Renderer {
 	
 	@Override
 	public void onDrawFrame(GL10 gl) {
-		// TODO Auto-generated method stub
+		
 	    // Clear color and depth buffers using clear-value set earlier
 	    gl.glClear(GL10.GL_COLOR_BUFFER_BIT | GL10.GL_DEPTH_BUFFER_BIT);
 	     
@@ -218,7 +225,7 @@ public class MagicCubeRender implements GLSurfaceView.Renderer {
 	
 	@Override
 	public void onSurfaceChanged(GL10 gl, int w, int h) {
-		// TODO Auto-generated method stub
+		
 		//reset the width and the height;
 		//Log.e("screen", w+" "+h);
 		
@@ -272,23 +279,23 @@ public class MagicCubeRender implements GLSurfaceView.Renderer {
 	    float []lightparam = {1f, 1f, 1f, 3f, 1f, 1f, 0, 0, 5};
 	    
 	    gl.glEnable(GL10.GL_LIGHTING);  
-	    // ÉèÖÃ»·¾³¹â  
+	    // ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½  
 	    gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_AMBIENT, lightparam, 0);  
 	    
-	    // ÉèÖÃÂþÉä¹â  
+	    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
 	    gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_DIFFUSE, lightparam, 3);  
 	    
-	    // ÉèÖÃ¾µÃæ·´Éä
+	    // ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½æ·´ï¿½ï¿½
 	    gl.glLightfv(GL10.GL_LIGHT0,  GL10.GL_SPECULAR, lightparam, 3); 
 	    
-	    // ÉèÖÃ¹âÔ´Î»ÖÃ  
+	    // ï¿½ï¿½ï¿½Ã¹ï¿½Ô´Î»ï¿½ï¿½  
 	    gl.glLightfv(GL10.GL_LIGHT0, GL10.GL_POSITION, lightparam, 6);  
 	    
-	    // ¿ªÆô¹âÔ´  
+	    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´  
 	    gl.glEnable(GL10.GL_LIGHT0);  
 	    */
 	    
-	    // ¿ªÆô»ìºÏ  
+	    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  
 	    //gl.glEnable(GL10.GL_BLEND); 
 	    if( this.stateListener != null )
 	    {
@@ -298,7 +305,7 @@ public class MagicCubeRender implements GLSurfaceView.Renderer {
 
 	@Override
 	public void onSurfaceCreated(GL10 gl, EGLConfig arg1) {
-		// TODO Auto-generated method stub
+		
 	      gl.glClearColor(0.0f, 0.0f, 0.0f, 1.0f);  // Set color's clear-value to black
 	      gl.glClearDepthf(1.0f);            // Set depth's clear-value to farthest
 	      gl.glEnable(GL10.GL_DEPTH_TEST);   // Enables depth-buffer for hidden surface removal
@@ -317,20 +324,7 @@ public class MagicCubeRender implements GLSurfaceView.Renderer {
 	      LoadBgTexture(gl);
 	}
 	
-	
-	private void LogFace()
-	{
-/*	      for(int i=0; i<6; i++)
-	      {
-	    	  String s = "";
-	    	  for( int j=0; j<9; j++)
-	    	  {
-	    		  s += faces[i].Subfaces[j] + " ";
-	    	  }
-	    	  Log.e(""+i, s);
-	      }*/
-	      		
-	}
+
 	
 	public void SetMessageSender(MessageSender messageSender)
 	{
@@ -449,19 +443,6 @@ public class MagicCubeRender implements GLSurfaceView.Renderer {
 	public void SetOnStepListnener(OnStepListener stepListener)
 	{
 		this.stepListener = stepListener;
-	}
-	
-	private void ReportFaces()
-	{
-/*	      for(int i=0; i<6; i++)
-	      {
-	    	  String s = "";
-	    	  for( int j=0; j<9; j++)
-	    	  {
-	    		  s += faces[i].Subfaces[j] + " ";
-	    	  }
-	    	  //Log.e(""+i, s);
-	      }*/
 	}
 	
 	public boolean GetPos(float[] point, int[] Pos)
@@ -645,25 +626,6 @@ public class MagicCubeRender implements GLSurfaceView.Renderer {
 		
 	}
 	
-	private float GetFaceArea(int faceindex)
-	{
-		float []P1 = new float[2];
-		float []P2 = new float[2];
-		float []P3 = new float[2];
-		float []P4 = new float[2];
-		
-		this.Project(magiccube.faces[faceindex].P1, P1);
-		this.Project(magiccube.faces[faceindex].P2, P2);
-		this.Project(magiccube.faces[faceindex].P3, P3);
-		this.Project(magiccube.faces[faceindex].P4, P4);
-		
-		float area = 0.f;
-		
-		area += 0.5f*GetLength2D(P1, P4)*GetLength2D(P1, P2)*Math.sin(GetAngle(P1, P4, P2));
-		area += 0.5f*GetLength2D(P3, P4)*GetLength2D(P3, P2)*Math.sin(GetAngle(P3, P4, P2));
-		
-		return area;
-	}
 	
 	private float GetLength2D(float []P1, float []P2)
 	{
@@ -1598,7 +1560,7 @@ public class MagicCubeRender implements GLSurfaceView.Renderer {
 	}
 	
 	public void setVolume(int volume) {
-		// TODO Auto-generated method stub
+		
 		this.volume = volume;
 	}
 	

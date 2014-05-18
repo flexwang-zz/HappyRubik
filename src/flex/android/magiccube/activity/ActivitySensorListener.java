@@ -1,3 +1,19 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube.activity;
 
 import flex.android.magiccube.MagiccubePreference;
@@ -59,73 +75,9 @@ public abstract class ActivitySensorListener extends Activity implements SensorE
     public void onAccuracyChanged(Sensor arg0, int arg1) {
         // TODO Auto-generated method stub
     }
-
-/*    public void onSensorChanged(SensorEvent sensorevent) {
-        // TODO Auto-generated method stub
-    	float[] values = sensorevent.values;
-    	if (Math.abs(values[0]) > MinVibration || Math.abs(values[1]) > MinVibration || Math.abs(values[2]) > MinVibration)
-    		Log.e("values", values[0]+" "+values[1]+" "+values[2]);
-    	ResetVibrateState();
-    	if( !CanVibrate)
-    	{
-    		return;
-    	}
-    	
-    	if( this.IsVibrating && GetCurSeconds()-LastValidVibrateTime <= this.TimeLap)
-    	{
-    		return;
-    	}
-    	
-        int sensorType = sensorevent.sensor.getType();
-        
-        if (sensorType == Sensor.TYPE_ACCELEROMETER){
-        	if(this.IsVibrating && GetCurSeconds()-this.LastVibrateTime < this.TimeLap)
-        	{
-        		return;
-        	}
-            if (Math.abs(values[0]) > MinVibration || Math.abs(values[1]) > MinVibration || Math.abs(values[2]) > MinVibration){
-            	if( LastVibrateValues == null)
-            	{
-            		LastVibrateValues = sensorevent.values;
-            		this.LastVibrateTime = GetCurSeconds();
-            	}
-            	else
-            	{
-            		if( GetCurSeconds()-this.LastVibrateTime > 1)
-            		{
-            			this.LastVibrateTime = GetCurSeconds();
-            			LastVibrateValues = sensorevent.values;
-            		}
-            		else
-            		{
-            			if(Math.abs(values[0]-LastVibrateValues[0]) > 1.5f*MinVibration || Math.abs(values[1]-LastVibrateValues[1]) > 1.5f*MinVibration || Math.abs(values[2]-LastVibrateValues[2]) > 1.5f*MinVibration)
-            			{
-        	            	mVibrator.vibrate(100);    
-        	            	LastVibrateValues = null;
-        	                this.IsVibrating =true;
-        	                SetVibrateState();
-        	                LastValidVibrateTime = GetCurSeconds();
-        	                onShake();
-            			}
-            			else
-            			{
-                			this.LastVibrateTime = GetCurSeconds();
-                			LastVibrateValues = sensorevent.values;
-            			}
-            		}
-            	}
-            }
-        }
-    }*/
     
     public void onSensorChanged(SensorEvent sensorevent) {
     	float[] values = sensorevent.values;
-    	//if( lasttest == 0)
-    	//{
-    		//lasttest = System.currentTimeMillis();
-    	//}
-    	//if (Math.abs(values[0]) > MinVibration || Math.abs(values[1]) > MinVibration || Math.abs(values[2]) > MinVibration)
-    		//Log.e("values", values[0]+" "+values[1]+" "+values[2]+" "+(System.currentTimeMillis()-lasttest));
     	lasttest = System.currentTimeMillis();
     	ResetVibrateState();
 
@@ -145,10 +97,6 @@ public abstract class ActivitySensorListener extends Activity implements SensorE
         
         if (sensorType == Sensor.TYPE_ACCELEROMETER)
         {
-/*        	if(this.IsVibrating && GetCurSeconds()-this.LastVibrateTime < this.TimeLap)
-        	{
-        		return;
-        	}*/
             if (Math.abs(values[0]) > MinVibration || Math.abs(values[1]) > MinVibration || Math.abs(values[2]) > MinVibration){
             	
             	long CurMilli = System.currentTimeMillis();
@@ -250,9 +198,9 @@ public abstract class ActivitySensorListener extends Activity implements SensorE
     
 /*    private int GetCurSeconds()
     {
-    	Time t=new Time("GMT+8"); 	//Time Zone资料。
+    	Time t=new Time("GMT+8"); 	//Time Zone锟斤拷锟较★拷
 
-    	t.setToNow(); // 取得系统时间。
+    	t.setToNow(); // 取锟斤拷系统时锟戒。
     	int hour = t.hour;
     	int minute = t.minute;
     	int second = t.second;

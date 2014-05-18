@@ -1,3 +1,19 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube.activity;
 
 import java.text.SimpleDateFormat;
@@ -178,7 +194,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 						ActivityBattleMode.this, R.raw.lose);
 				loseplayer.start();
 				dialog = new DialogBattleMode(ActivityBattleMode.this,
-						"¶Ô·½ÇÀÏÈÒ»²½...", MoveTime);
+						"ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½...", MoveTime);
 				dialog.show();
 				break;
 			case 7: // win
@@ -187,7 +203,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 						ActivityBattleMode.this, R.raw.win);
 				winplayer.start();
 				dialog = new DialogBattleMode(ActivityBattleMode.this,
-						"ÄúÇÀÏÈÍê³É£¡", MoveTime);
+						"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½", MoveTime);
 				dialog.show();
 				break;
 			case 8:
@@ -304,7 +320,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 		mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
 		// If the adapter is null, then Bluetooth is not supported
 		if (mBluetoothAdapter == null) {
-			Toast.makeText(this, "À¶ÑÀ²»¿ÉÓÃ...", Toast.LENGTH_LONG).show();
+			Toast.makeText(this, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...", Toast.LENGTH_LONG).show();
 			finish();
 			return;
 		}
@@ -433,7 +449,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 
 			uihandler.sendEmptyMessage(2);
 
-			GamingbgmPlayer.setLooping(true);// ÉèÖÃÑ­»·²¥·Å
+			GamingbgmPlayer.setLooping(true);// ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			GamingbgmPlayer.seekTo(0);
 			GamingbgmPlayer.start();
 			ObservingbgmPlayer.pause();
@@ -522,7 +538,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 		clock.setVisibility(View.VISIBLE);
 
 		if (TotalObTime > 0) {
-			ObservingbgmPlayer.setLooping(true);// ÉèÖÃÑ­»·²¥·Å
+			ObservingbgmPlayer.setLooping(true);// ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			ObservingbgmPlayer.seekTo(0);
 			ObservingbgmPlayer.start();
 			glView.StartObserve();
@@ -539,7 +555,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 			State = OnStateListener.GAMING;
 			uihandler.sendEmptyMessage(2);
 
-			GamingbgmPlayer.setLooping(true);// ÉèÖÃÑ­»·²¥·Å
+			GamingbgmPlayer.setLooping(true);// ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			GamingbgmPlayer.seekTo(0);
 			GamingbgmPlayer.start();
 		}
@@ -599,7 +615,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 			case MESSAGE_STATE_CHANGE:
 				switch (msg.arg1) {
 				case BluetoothChatService.STATE_CONNECTED:
-					showWait("½¨Á¢ÓÎÏ·...");
+					showWait("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·...");
 
 					try {
 						SetupGame();
@@ -623,7 +639,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 					break;
 				case BluetoothChatService.STATE_CONNECTING:
 					// mTitle.setText(R.string.title_connecting);
-					showWait("Á¬½ÓÖÐ...");
+					showWait("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...");
 					break;
 				case BluetoothChatService.STATE_LISTEN:
 				case BluetoothChatService.STATE_NONE:
@@ -665,7 +681,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 				LeaveOnError();
 				break;
 			case NOT_HEART_BEATING:
-				Toast toast = Toast.makeText(ActivityBattleMode.this, "ÎÞ·¨½¨Á¢ÓÎÏ·",
+				Toast toast = Toast.makeText(ActivityBattleMode.this, "ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·",
 						Toast.LENGTH_LONG);
 				toast.setGravity(Gravity.BOTTOM, 0, height / 11);
 				toast.show();
@@ -675,7 +691,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 				break;
 			case NOT_ENABLE_DISCOVERY:
 				Toast toast2 = Toast.makeText(ActivityBattleMode.this,
-						"ÎÞ·¨½¨Á¢Ö÷»ú", Toast.LENGTH_LONG);
+						"ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", Toast.LENGTH_LONG);
 				toast2.setGravity(Gravity.BOTTOM, 0, height / 11);
 				toast2.show();
 				Intent intent2 = new Intent(ActivityBattleMode.this,
@@ -684,7 +700,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 				break;
 			case CONNECT_FAILED:
 				Toast toast3 = Toast.makeText(ActivityBattleMode.this,
-						"À¶ÑÀÁ¬½Ó²»³É¹¦£¬ÇëÖØÊÔ...", Toast.LENGTH_LONG);
+						"ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ó²ï¿½ï¿½É¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...", Toast.LENGTH_LONG);
 				toast3.setGravity(Gravity.BOTTOM, 0, height / 11);
 				toast3.show();
 				Intent intent3 = new Intent(ActivityBattleMode.this,
@@ -739,7 +755,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 					if (mBluetoothAdapter.getScanMode() != BluetoothAdapter.SCAN_MODE_CONNECTABLE_DISCOVERABLE) {
 						ensureDiscoverable();
 					} else {
-						this.showWait("µÈ´ýÁ¬½Ó...");
+						this.showWait("ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½...");
 					}
 				} else if (MagiccubePreference.GetPreference(
 						MagiccubePreference.ServerOrClient, this) == 0) {
@@ -762,7 +778,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 		case REQUEST_DISCOVERABLE:
 			// Log.e("resultCode", resultCode+"");
 			if (resultCode > 0) {
-				this.showWait("µÈ´ýÁ¬½Ó...");
+				this.showWait("ï¿½È´ï¿½ï¿½ï¿½ï¿½ï¿½...");
 			} else {
 				mHandler.sendEmptyMessage(NOT_ENABLE_DISCOVERY);
 			}
@@ -823,7 +839,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 	}
 
 	/**
-	 * ¹Ø±ÕµÈ´ý¿ò
+	 * ï¿½Ø±ÕµÈ´ï¿½ï¿½
 	 * */
 	public void waitClose() {
 		runOnUiThread(new Runnable() {
@@ -1011,7 +1027,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 			if (mChatService != null) {
 				// mChatService.stop();
 				// mChatService = null;
-				Toast toast = Toast.makeText(this, "¶Ô·½ÒÑÀë¿ª", Toast.LENGTH_LONG);
+				Toast toast = Toast.makeText(this, "ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ë¿ª", Toast.LENGTH_LONG);
 				toast.setGravity(Gravity.BOTTOM, 0, height / 11);
 				toast.show();
 			}
@@ -1135,7 +1151,7 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 	}
 
 	public void LeaveOnError() {
-		LeaveOnError("À¶ÑÀÍ¨Ñ¶³ö´í...ÇëÁªÏµÎÒ:flexwang@qq.com");
+		LeaveOnError("ï¿½ï¿½ï¿½ï¿½Í¨Ñ¶ï¿½ï¿½ï¿½ï¿½...ï¿½ï¿½ï¿½ï¿½Ïµï¿½ï¿½:flexwang@qq.com");
 	}
 
 	public void LeaveOnError(String msg) {
@@ -1218,10 +1234,10 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 
 		Toast toast;
 		if (State == OnStateListener.WIN) {
-			toast = Toast.makeText(getApplicationContext(), "ÄúµÄÂ¼ÏñÒÑ±£´æÖÁ"
+			toast = Toast.makeText(getApplicationContext(), "ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½Ñ±ï¿½ï¿½ï¿½ï¿½ï¿½"
 					+ datestr, Toast.LENGTH_LONG);
 		} else {
-			toast = Toast.makeText(getApplicationContext(), "¶Ô·½Â¼ÏñÒÑ±£´æÖÁ"
+			toast = Toast.makeText(getApplicationContext(), "ï¿½Ô·ï¿½Â¼ï¿½ï¿½ï¿½Ñ±ï¿½ï¿½ï¿½ï¿½ï¿½"
 					+ datestr, Toast.LENGTH_LONG);
 		}
 
@@ -1348,27 +1364,27 @@ public class ActivityBattleMode extends ActivitySensorListener implements
 	};
 
 	private void showExitGameAlert() {
-		String msg = "Àë¿ªºóÄã½«ÊäµôÓÎÏ·¡£";
+		String msg = "ï¿½ë¿ªï¿½ï¿½ï¿½ã½«ï¿½ï¿½ï¿½ï¿½ï¿½Ï·ï¿½ï¿½";
 		if (this.opleaved) {
-			msg = "Àë¿ªºó,ÓÎÏ·½ø¶È½«²»ÄÜ±£´æ¡£";
+			msg = "ï¿½ë¿ªï¿½ï¿½,ï¿½ï¿½Ï·ï¿½ï¿½È½ï¿½ï¿½ï¿½ï¿½Ü±ï¿½ï¿½æ¡£";
 
 		}
-		new AlertDialog.Builder(this).setTitle("È·ÈÏÀë¿ª").setMessage(msg)
+		new AlertDialog.Builder(this).setTitle("È·ï¿½ï¿½ï¿½ë¿ª").setMessage(msg)
 				.setIcon(R.drawable.ic_exit)
-				.setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {
+				.setPositiveButton("È·ï¿½ï¿½", new DialogInterface.OnClickListener() {
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// µã»÷¡°È·ÈÏ¡±ºóµÄ²Ù×÷
+						// ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï¡ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½
 						ActivityBattleMode.this.finish();
 
 					}
 				})
-				.setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {
+				.setNegativeButton("È¡ï¿½ï¿½", new DialogInterface.OnClickListener() {
 
 					@Override
 					public void onClick(DialogInterface dialog, int which) {
-						// µã»÷¡°·µ»Ø¡±ºóµÄ²Ù×÷,ÕâÀï²»ÉèÖÃÃ»ÓÐÈÎºÎ²Ù×÷
+						// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¡ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï²»ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ÎºÎ²ï¿½ï¿½ï¿½
 					}
 				}).show();
 	}

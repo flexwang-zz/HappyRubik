@@ -1,3 +1,19 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube;
 
 import java.nio.ByteBuffer;
@@ -13,7 +29,6 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.opengl.GLUtils;
 import android.opengl.Matrix;
-import android.util.Log;
 
 public class Cube {
 
@@ -253,7 +268,7 @@ public class Cube {
 
 		gl.glMultMatrixf(modelM, 0);
 		gl.glTranslatef(xp, yp, zp);
-		float cubeHalfSize = this.CubeSize / 2.f;
+		float cubeHalfSize = CubeSize / 2.f;
 		// left
 		if (ID % 9 == 0 || ID % 9 == 3 || ID % 9 == 6) {
 			gl.glPushMatrix();
@@ -345,7 +360,7 @@ public class Cube {
 
 		gl.glMultMatrixf(modelM, 0);
 		gl.glTranslatef(xp, yp, zp);
-		float cubeHalfSize = this.CubeSize / 2.f;
+		float cubeHalfSize = CubeSize / 2.f;
 		// left
 
 		gl.glPushMatrix();

@@ -1,3 +1,19 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube.solver;
 
 import android.util.Log;
@@ -7,8 +23,8 @@ import flex.android.magiccube.Command;
 public class JaapSolver extends MagicCubeSolver {
 	public JaapSolver()
 	{
-		this.AuthorName = "Jaap Scherphuis";
-		this.AverageNStep = 16.04f;
+		AuthorName = "Jaap Scherphuis";
+		AverageNStep = 16.04f;
 		result = "";
 	}
 	
@@ -89,7 +105,7 @@ public class JaapSolver extends MagicCubeSolver {
 		InitialState = ResetInitial(InitialState);
 		
 /*		if( 1==1)
-		return this.result;*/
+		return result;*/
 		//Log.e("init", InitialState);
 		
 		String[] initialState = InitialState.split(" ");
@@ -127,7 +143,7 @@ public class JaapSolver extends MagicCubeSolver {
 			// try each depth till solved
 			nLoop = 0;
 			for( j=0; !searchphase(j,0,9); j++);
-			if( nLoop > this.maxnloop)
+			if( nLoop > maxnloop)
 				break;
 			//output result of this phase
 			for( i=0; i<j; i++)
@@ -189,7 +205,7 @@ public class JaapSolver extends MagicCubeSolver {
 	
 	// Pruned tree search. recursive.
 	private boolean searchphase(int movesleft, int movesdone,int lastmove){
-		if(nLoop++ > this.maxnloop)
+		if(nLoop++ > maxnloop)
 			return true;
 		// prune - position must still be solvable in the remaining moves available
 		if( tables[phase  ][getposition(phase  )]-1 > movesleft ||
@@ -306,7 +322,6 @@ public class JaapSolver extends MagicCubeSolver {
 	}
 	
 	private void memset(char[] ptr, int val, int size) {
-		// TODO Auto-generated method stub
 		for(int i=0; i<size; i++)
 		{
 			ptr[i] = (char) (val);
@@ -446,135 +461,132 @@ public class JaapSolver extends MagicCubeSolver {
 		Log.e("e", InitialState);
 		
 		//deal with the f b position
-		for(fi=this.F; fi<InitialState.length(); fi++)
+		for(fi=F; fi<InitialState.length(); fi++)
 		{
 			if(initialState[fi] == 'F')
 			{
 				break;
 			}
 		}
-		
-		String str;
-		
 
-		if( fi == this.F )
+		if( fi == F )
 		{
 			//do nothing
 		}
-		else if( fi == this.B )
+		else if( fi == B )
 		{
-			this.result += Command.rotate_row+"1"+Command.clockwise + "2" + " ";
-			tmp = initialState[this.FL];
-			initialState[this.FL] = initialState[this.BR];
-			initialState[this.BR] = tmp;
+			result += Command.rotate_row+"1"+Command.clockwise + "2" + " ";
+			tmp = initialState[FL];
+			initialState[FL] = initialState[BR];
+			initialState[BR] = tmp;
 			
-			tmp = initialState[this.FR];
-			initialState[this.FR] = initialState[this.BL];
-			initialState[this.BL] = tmp;
+			tmp = initialState[FR];
+			initialState[FR] = initialState[BL];
+			initialState[BL] = tmp;
 			
-			tmp = initialState[this.FL+1];
-			initialState[this.FL+1] = initialState[this.BR+1];
-			initialState[this.BR+1] = tmp;
+			tmp = initialState[FL+1];
+			initialState[FL+1] = initialState[BR+1];
+			initialState[BR+1] = tmp;
 			
-			tmp = initialState[this.FR+1];
-			initialState[this.FR+1] = initialState[this.BL+1];
-			initialState[this.BL+1] = tmp;
+			tmp = initialState[FR+1];
+			initialState[FR+1] = initialState[BL+1];
+			initialState[BL+1] = tmp;
 			
-			tmp = initialState[this.L];
-			initialState[this.L] = initialState[this.R];
-			initialState[this.R] = tmp;
+			tmp = initialState[L];
+			initialState[L] = initialState[R];
+			initialState[R] = tmp;
 			
-			tmp = initialState[this.F];
-			initialState[this.F] = initialState[this.B];
-			initialState[this.B] = tmp;
+			tmp = initialState[F];
+			initialState[F] = initialState[B];
+			initialState[B] = tmp;
 		}
-		else if( fi == this.L )
+		else if( fi == L )
 		{
-			this.result += Command.rotate_row+"1"+Command.clockwise + "1" + " ";
-			tmp = initialState[this.FL];
-			initialState[this.FL] = initialState[this.BL+1];
-			initialState[this.BL+1] = initialState[this.BR];
-			initialState[this.BR] = initialState[this.FR+1];
-			initialState[this.FR+1] = tmp;
+			result += Command.rotate_row+"1"+Command.clockwise + "1" + " ";
+			tmp = initialState[FL];
+			initialState[FL] = initialState[BL+1];
+			initialState[BL+1] = initialState[BR];
+			initialState[BR] = initialState[FR+1];
+			initialState[FR+1] = tmp;
 			
-			tmp = initialState[this.FL+1];
-			initialState[this.FL+1] = initialState[this.BL];
-			initialState[this.BL] = initialState[this.BR+1];
-			initialState[this.BR+1] = initialState[this.FR];
-			initialState[this.FR] = tmp;
+			tmp = initialState[FL+1];
+			initialState[FL+1] = initialState[BL];
+			initialState[BL] = initialState[BR+1];
+			initialState[BR+1] = initialState[FR];
+			initialState[FR] = tmp;
 			
-			tmp = initialState[this.F];
-			initialState[this.F] = initialState[this.L];
-			initialState[this.L] = initialState[this.B];
-			initialState[this.B] = initialState[this.R];
-			initialState[this.R] = tmp;
+			tmp = initialState[F];
+			initialState[F] = initialState[L];
+			initialState[L] = initialState[B];
+			initialState[B] = initialState[R];
+			initialState[R] = tmp;
 		}
-		else if( fi == this.R )
+		else if( fi == R )
 		{
-			this.result += Command.rotate_row+"1"+Command.counterclockwise + "1" + " ";
-			tmp = initialState[this.FL];
-			initialState[this.FL] = initialState[this.FR+1];
-			initialState[this.FR+1] = initialState[this.BR];
-			initialState[this.BR] = initialState[this.BL+1];
-			initialState[this.BL+1] = tmp;
+			result += Command.rotate_row+"1"+Command.counterclockwise + "1" + " ";
+			tmp = initialState[FL];
+			initialState[FL] = initialState[FR+1];
+			initialState[FR+1] = initialState[BR];
+			initialState[BR] = initialState[BL+1];
+			initialState[BL+1] = tmp;
 			
-			tmp = initialState[this.FL+1];
-			initialState[this.FL+1] = initialState[this.FR];
-			initialState[this.FR] = initialState[this.BR+1];
-			initialState[this.BR+1] = initialState[this.BL];
-			initialState[this.BL] = tmp;
+			tmp = initialState[FL+1];
+			initialState[FL+1] = initialState[FR];
+			initialState[FR] = initialState[BR+1];
+			initialState[BR+1] = initialState[BL];
+			initialState[BL] = tmp;
 			
-			tmp = initialState[this.F];
-			initialState[this.F] = initialState[this.R];
-			initialState[this.R] = initialState[this.B];
-			initialState[this.B] = initialState[this.L];
-			initialState[this.L] = tmp;
+			tmp = initialState[F];
+			initialState[F] = initialState[R];
+			initialState[R] = initialState[B];
+			initialState[B] = initialState[L];
+			initialState[L] = tmp;
 		}
-		else if( fi == this.U )
+		else if( fi == U )
 		{
-			this.result += Command.rotate_col+"1"+Command.clockwise + "1" + " ";
-			tmp = initialState[this.UF+1];
-			initialState[this.UF+1] = initialState[this.UB];
-			initialState[this.UB] = initialState[this.DB+1];
-			initialState[this.DB+1] = initialState[this.DF];
-			initialState[this.DF] = tmp;
+			result += Command.rotate_col+"1"+Command.clockwise + "1" + " ";
+			tmp = initialState[UF+1];
+			initialState[UF+1] = initialState[UB];
+			initialState[UB] = initialState[DB+1];
+			initialState[DB+1] = initialState[DF];
+			initialState[DF] = tmp;
 			
-			tmp = initialState[this.UF];
-			initialState[this.UF] = initialState[this.UB+1];
-			initialState[this.UB+1] = initialState[this.DB];
-			initialState[this.DB] = initialState[this.DF+1];
-			initialState[this.DF+1] = tmp;
+			tmp = initialState[UF];
+			initialState[UF] = initialState[UB+1];
+			initialState[UB+1] = initialState[DB];
+			initialState[DB] = initialState[DF+1];
+			initialState[DF+1] = tmp;
 			
-			tmp = initialState[this.F];
-			initialState[this.F] = initialState[this.U];
-			initialState[this.U] = initialState[this.B];
-			initialState[this.B] = initialState[this.D];
-			initialState[this.D] = tmp;
+			tmp = initialState[F];
+			initialState[F] = initialState[U];
+			initialState[U] = initialState[B];
+			initialState[B] = initialState[D];
+			initialState[D] = tmp;
 		}
-		else if( fi == this.D )
+		else if( fi == D )
 		{
-			this.result += Command.rotate_col+"1"+Command.counterclockwise + "1" + " ";
-			tmp = initialState[this.UF+1];
-			initialState[this.UF+1] = initialState[this.DF];
-			initialState[this.DF] = initialState[this.DB+1];
-			initialState[this.DB+1] = initialState[this.UB];
-			initialState[this.UB] = tmp;
+			result += Command.rotate_col+"1"+Command.counterclockwise + "1" + " ";
+			tmp = initialState[UF+1];
+			initialState[UF+1] = initialState[DF];
+			initialState[DF] = initialState[DB+1];
+			initialState[DB+1] = initialState[UB];
+			initialState[UB] = tmp;
 			
-			tmp = initialState[this.UF];
-			initialState[this.UF] = initialState[this.DF+1];
-			initialState[this.DF+1] = initialState[this.DB];
-			initialState[this.DB] = initialState[this.UB+1];
-			initialState[this.UB+1] = tmp;
+			tmp = initialState[UF];
+			initialState[UF] = initialState[DF+1];
+			initialState[DF+1] = initialState[DB];
+			initialState[DB] = initialState[UB+1];
+			initialState[UB+1] = tmp;
 			
-			tmp = initialState[this.F];
-			initialState[this.F] = initialState[this.D];
-			initialState[this.D] = initialState[this.B];
-			initialState[this.B] = initialState[this.U];
-			initialState[this.U] = tmp;
+			tmp = initialState[F];
+			initialState[F] = initialState[D];
+			initialState[D] = initialState[B];
+			initialState[B] = initialState[U];
+			initialState[U] = tmp;
 		}
 		
 		//deal with the l r position
-		for(li=this.F; li<InitialState.length(); li++)
+		for(li=F; li<InitialState.length(); li++)
 		{
 			if(initialState[li] == 'L')
 			{
@@ -582,59 +594,59 @@ public class JaapSolver extends MagicCubeSolver {
 			}
 		}
 		
-		if( li == this.L)
+		if( li == L)
 		{
 			//do nothing
 			
 		}
-		else if( li == this.U)
+		else if( li == U)
 		{
-			this.result += Command.rotate_face+"1"+Command.clockwise + "1" + " ";
-			tmp = initialState[this.UL+1];
-			initialState[this.UL+1] = initialState[this.UR];
-			initialState[this.UR] = initialState[this.DR+1];
-			initialState[this.DR+1] = initialState[this.DL];
-			initialState[this.DL] = tmp;
+			result += Command.rotate_face+"1"+Command.clockwise + "1" + " ";
+			tmp = initialState[UL+1];
+			initialState[UL+1] = initialState[UR];
+			initialState[UR] = initialState[DR+1];
+			initialState[DR+1] = initialState[DL];
+			initialState[DL] = tmp;
 			
-			tmp = initialState[this.UL];
-			initialState[this.UL] = initialState[this.UR+1];
-			initialState[this.UR+1] = initialState[this.DR];
-			initialState[this.DR] = initialState[this.DL+1];
-			initialState[this.DL+1] = tmp;
+			tmp = initialState[UL];
+			initialState[UL] = initialState[UR+1];
+			initialState[UR+1] = initialState[DR];
+			initialState[DR] = initialState[DL+1];
+			initialState[DL+1] = tmp;
 		}
-		else if( li == this.D)
+		else if( li == D)
 		{
-			this.result += Command.rotate_face+"1"+Command.counterclockwise + "1" + " ";
-			tmp = initialState[this.UL+1];
-			initialState[this.UL+1] = initialState[this.DL];
-			initialState[this.DL] = initialState[this.DR+1];
-			initialState[this.DR+1] = initialState[this.UR];
-			initialState[this.UR] = tmp;
+			result += Command.rotate_face+"1"+Command.counterclockwise + "1" + " ";
+			tmp = initialState[UL+1];
+			initialState[UL+1] = initialState[DL];
+			initialState[DL] = initialState[DR+1];
+			initialState[DR+1] = initialState[UR];
+			initialState[UR] = tmp;
 			
-			tmp = initialState[this.UL];
-			initialState[this.UL] = initialState[this.DL+1];
-			initialState[this.DL+1] = initialState[this.DR];
-			initialState[this.DR] = initialState[this.UR+1];
-			initialState[this.UR+1] = tmp;
+			tmp = initialState[UL];
+			initialState[UL] = initialState[DL+1];
+			initialState[DL+1] = initialState[DR];
+			initialState[DR] = initialState[UR+1];
+			initialState[UR+1] = tmp;
 		}
-		else if( li == this.R)
+		else if( li == R)
 		{
-			this.result += Command.rotate_face+"1"+Command.counterclockwise + "2" + " ";
-			tmp = initialState[this.UL];
-			initialState[this.UL] = initialState[this.DR];
-			initialState[this.DR] = tmp;
+			result += Command.rotate_face+"1"+Command.counterclockwise + "2" + " ";
+			tmp = initialState[UL];
+			initialState[UL] = initialState[DR];
+			initialState[DR] = tmp;
 			
-			tmp = initialState[this.UR];
-			initialState[this.UR] = initialState[this.DL];
-			initialState[this.DL] = tmp;
+			tmp = initialState[UR];
+			initialState[UR] = initialState[DL];
+			initialState[DL] = tmp;
 			
-			tmp = initialState[this.UL+1];
-			initialState[this.UL+1] = initialState[this.DR+1];
-			initialState[this.DR+1] = tmp;
+			tmp = initialState[UL+1];
+			initialState[UL+1] = initialState[DR+1];
+			initialState[DR+1] = tmp;
 			
-			tmp = initialState[this.UR+1];
-			initialState[this.UR+1] = initialState[this.DL+1];
-			initialState[this.DL+1] = tmp;
+			tmp = initialState[UR+1];
+			initialState[UR+1] = initialState[DL+1];
+			initialState[DL+1] = tmp;
 		}
 		return new String(initialState);
 		

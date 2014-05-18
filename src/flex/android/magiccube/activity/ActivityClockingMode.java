@@ -1,3 +1,19 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube.activity;
 
 import java.text.SimpleDateFormat;
@@ -131,7 +147,7 @@ public class ActivityClockingMode extends ActivitySensorListener implements OnTi
 				txtNStep.setText(""+nStep);
 				break;
 			case 5:
-				dialog = new DialogClockingMode(ActivityClockingMode.this, "Íê³É£¡", MoveTime);
+				dialog = new DialogClockingMode(ActivityClockingMode.this, "ï¿½ï¿½É£ï¿½", MoveTime);
 				dialog.show();
 				break;
 			case 6:
@@ -330,7 +346,7 @@ public class ActivityClockingMode extends ActivitySensorListener implements OnTi
     	dbHelper.insert(TableName, values);
     	
     	Toast toast = Toast.makeText(getApplicationContext(),
-    		     "Â¼ÏñÒÑ±£´æÖÁ"+datestr, Toast.LENGTH_LONG);
+    		     "Â¼ï¿½ï¿½ï¿½Ñ±ï¿½ï¿½ï¿½ï¿½ï¿½"+datestr, Toast.LENGTH_LONG);
     	toast.setGravity(Gravity.CENTER, 0, 0);
     	toast.show();
     }
@@ -364,7 +380,7 @@ public class ActivityClockingMode extends ActivitySensorListener implements OnTi
 				
 				glView.StartObserve();
 				
-				ObservingbgmPlayer.setLooping(true);//ÉèÖÃÑ­»·²¥·Å
+				ObservingbgmPlayer.setLooping(true);//ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 				ObservingbgmPlayer.start();
 				
 				State = OnStateListener.OBSERVING;
@@ -413,7 +429,7 @@ public class ActivityClockingMode extends ActivitySensorListener implements OnTi
 			handler.sendEmptyMessage(2);
 			handler.sendEmptyMessage(3);
 			
-			GamingbgmPlayer.setLooping(true);//ÉèÖÃÑ­»·²¥·Å
+			GamingbgmPlayer.setLooping(true);//ï¿½ï¿½ï¿½ï¿½Ñ­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 			GamingbgmPlayer.start();
 			ObservingbgmPlayer.pause();
 		}
@@ -708,23 +724,23 @@ public class ActivityClockingMode extends ActivitySensorListener implements OnTi
 	}
 	
     private void showExitGameAlert(){
-    	new AlertDialog.Builder(this).setTitle("È·ÈÏÀë¿ª"). 
-    	setMessage("Àë¿ªºó,ÓÎÏ·½ø¶È½«²»ÄÜ±£´æ¡£").
+    	new AlertDialog.Builder(this).setTitle("È·ï¿½ï¿½ï¿½ë¿ª"). 
+    	setMessage("ï¿½ë¿ªï¿½ï¿½,ï¿½ï¿½Ï·ï¿½ï¿½È½ï¿½ï¿½ï¿½ï¿½Ü±ï¿½ï¿½æ¡£").
     	setIcon(R.drawable.ic_exit)  
-        .setPositiveButton("È·¶¨", new DialogInterface.OnClickListener() {  
+        .setPositiveButton("È·ï¿½ï¿½", new DialogInterface.OnClickListener() {  
       
             @Override  
             public void onClick(DialogInterface dialog, int which) {  
-            // µã»÷¡°È·ÈÏ¡±ºóµÄ²Ù×÷  
+            // ï¿½ï¿½ï¿½ï¿½ï¿½È·ï¿½Ï¡ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½  
             	ActivityClockingMode.this.finish();  
       
             }  
         })  
-        .setNegativeButton("È¡Ïû", new DialogInterface.OnClickListener() {  
+        .setNegativeButton("È¡ï¿½ï¿½", new DialogInterface.OnClickListener() {  
       
             @Override  
             public void onClick(DialogInterface dialog, int which) {  
-            // µã»÷¡°·µ»Ø¡±ºóµÄ²Ù×÷,ÕâÀï²»ÉèÖÃÃ»ÓÐÈÎºÎ²Ù×÷  
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¡ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½,ï¿½ï¿½ï¿½ï²»ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ÎºÎ²ï¿½ï¿½ï¿½  
             }  
         }).show();  
     }

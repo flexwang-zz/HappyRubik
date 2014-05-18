@@ -1,17 +1,28 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube.dialog;
 
 import flex.android.magiccube.MagiccubePreference;
 import flex.android.magiccube.R;
-import flex.android.magiccube.interfaces.OnStateListener;
-import flex.android.magiccube.view.ViewNormalMode;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Handler;
 import android.text.format.Time;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -175,9 +186,9 @@ public class DialogSetting extends Dialog implements OnClickListener {
 		}
 
 		private int GetCurSeconds() {
-			Time t = new Time("GMT+8"); // Time Zone资料。
+			Time t = new Time("GMT+8"); // Time Zone锟斤拷锟较★拷
 
-			t.setToNow(); // 取得系统时间。
+			t.setToNow(); // 取锟斤拷系统时锟戒。
 			int hour = t.hour;
 			int minute = t.minute;
 			int second = t.second;

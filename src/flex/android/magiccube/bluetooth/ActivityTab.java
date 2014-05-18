@@ -1,3 +1,19 @@
+/*
+ * Copyright 2011-2014 Zhaotian Wang <zhaotianzju@gmail.com>
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
 package flex.android.magiccube.bluetooth;
 
 
@@ -8,7 +24,6 @@ import android.app.TabActivity;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Window;
 import android.widget.TabHost;
 import android.widget.TabHost.TabSpec;
@@ -24,7 +39,7 @@ public class ActivityTab extends TabActivity {
 	    _instance = this;
 	    
         requestWindowFeature(Window.FEATURE_INDETERMINATE_PROGRESS);
-	    setContentView(R.layout.bluetooth_tab_view);//ÕâÀïÊ¹ÓÃÁËÉÏÃæ´´½¨µÄxmlÎÄ¼ş£¨TabÒ³ÃæµÄ²¼¾Ö£©
+	    setContentView(R.layout.bluetooth_tab_view);//ï¿½ï¿½ï¿½ï¿½Ê¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½æ´´ï¿½ï¿½ï¿½ï¿½xmlï¿½Ä¼ï¿½ï¿½ï¿½TabÒ³ï¿½ï¿½Ä²ï¿½ï¿½Ö£ï¿½
         // Set result CANCELED incase the user backs out
         setResult(Activity.RESULT_OK);
         
@@ -35,19 +50,19 @@ public class ActivityTab extends TabActivity {
 	    TabSpec spec;
 	    Intent intent;  // Reusable Intent for each tab
  
-	  //µÚÒ»¸öTAB
-	    intent = new Intent(this,ActivityServer.class);//ĞÂ½¨Ò»¸öIntentÓÃ×÷Tab1ÏÔÊ¾µÄÄÚÈİ
-	    spec = tabHost.newTabSpec("½¨Á¢ÓÎÏ·")//ĞÂ½¨Ò»¸ö Tab
-	    .setIndicator("½¨Á¢ÓÎÏ·", res.getDrawable(R.drawable.server))//ÉèÖÃÃû³ÆÒÔ¼°Í¼±ê
-	    .setContent(intent);//ÉèÖÃÏÔÊ¾µÄintent£¬ÕâÀïµÄ²ÎÊıÒ²¿ÉÒÔÊÇR.id.xxx
-	    tabHost.addTab(spec);//Ìí¼Ó½øtabHost
+	  //ï¿½ï¿½Ò»ï¿½ï¿½TAB
+	    intent = new Intent(this,ActivityServer.class);//ï¿½Â½ï¿½Ò»ï¿½ï¿½Intentï¿½ï¿½ï¿½ï¿½Tab1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    spec = tabHost.newTabSpec("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·")//ï¿½Â½ï¿½Ò»ï¿½ï¿½ Tab
+	    .setIndicator("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï·", res.getDrawable(R.drawable.server))//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½Í¼ï¿½ï¿½
+	    .setContent(intent);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½intentï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½R.id.xxx
+	    tabHost.addTab(spec);//ï¿½ï¿½Ó½ï¿½tabHost
  
-	    //µÚ¶ş¸öTAB
-	    intent = new Intent(this,ActivityClient.class);//µÚ¶ş¸öIntentÓÃ×÷Tab1ÏÔÊ¾µÄÄÚÈİ
-	    spec = tabHost.newTabSpec("¼ÓÈë±ğÈË")//ĞÂ½¨Ò»¸ö Tab
-	    .setIndicator("¼ÓÈë±ğÈË", res.getDrawable(R.drawable.in))//ÉèÖÃÃû³ÆÒÔ¼°Í¼±ê
-	    .setContent(intent);//ÉèÖÃÏÔÊ¾µÄintent£¬ÕâÀïµÄ²ÎÊıÒ²¿ÉÒÔÊÇR.id.xxx
-	    tabHost.addTab(spec);//Ìí¼Ó½øtabHost
+	    //ï¿½Ú¶ï¿½ï¿½ï¿½TAB
+	    intent = new Intent(this,ActivityClient.class);//ï¿½Ú¶ï¿½ï¿½ï¿½Intentï¿½ï¿½ï¿½ï¿½Tab1ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	    spec = tabHost.newTabSpec("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½")//ï¿½Â½ï¿½Ò»ï¿½ï¿½ Tab
+	    .setIndicator("ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", res.getDrawable(R.drawable.in))//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô¼ï¿½Í¼ï¿½ï¿½
+	    .setContent(intent);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½intentï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä²ï¿½ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½R.id.xxx
+	    tabHost.addTab(spec);//ï¿½ï¿½Ó½ï¿½tabHost
  
 	    tabHost.setCurrentTab(0);
 	}
