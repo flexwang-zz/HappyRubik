@@ -1,6 +1,5 @@
 Happy Rubic 欢乐魔方
 =========
----
 Happy Rubic is an APP of Rubik's Cube on Android, which implements almost every function of Rubik's Cube.
 
 
@@ -28,7 +27,7 @@ Android 2.3 and above
 Video 视频
 --------------
 
-youtube: https://www.youtube.com/watch?v=8GJWn7WzRNg</br>
+youtube: https://www.youtube.com/watch?v=8GJWn7WzRNg
 youku: http://v.youku.com/v_show/id_XNjE4MzY1NDU2.html （mainland, China only)
 
 License
