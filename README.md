@@ -1,6 +1,6 @@
-Happy Rubic 欢乐魔方
+Happy Rubik 欢乐魔方
 =========
-Happy Rubic is an app of Rubik's Cube on Android, which implements almost everything about Rubik's Cube.
+Happy Rubik is an app of Rubik's Cube on Android, which implements almost everything about Rubik's Cube.
 
 
 欢乐魔方是一款安卓上的魔方应用。它几乎完美支持三阶魔方的各种操作。
