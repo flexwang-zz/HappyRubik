@@ -44,8 +44,6 @@ Snapshots 截图
 Download apk 下载
 ----
 
-机锋网：http://apk.gfan.com/Product/App680721.html
-
 木蚂蚁：http://www.mumayi.com/android-458697.html?1385750840
 
 安智网：http://www.anzhi.com/soft_1219150.html
